@@ -1,21 +1,21 @@
-<!-- iframe1.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Botón de Color</title>
+  <title>Iframe 1 - Botón</title>
 </head>
 <body>
-  <button id="colorButton">Cambiar Color</button>
+  <button id="changeColorBtn">Cambiar color del modelo 3D</button>
 
   <script>
-    const colorButton = document.getElementById('colorButton');
+    // Obtener el botón
+    const changeColorBtn = document.getElementById('changeColorBtn');
 
-    colorButton.addEventListener('click', () => {
-      // Enviar el mensaje al iframe 2
+    // Cuando se hace clic en el botón
+    changeColorBtn.addEventListener('click', function() {
+      // Enviar un mensaje al iframe 2 (modelo 3D)
       const iframe2 = window.parent.document.getElementById('iframe2');
-      iframe2.contentWindow.postMessage({ action: 'changeColor', color: '#ff0000' }, '*');
+      iframe2.contentWindow.postMessage('changeColor', '*');
     });
   </script>
 </body>
